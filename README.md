@@ -5,4 +5,4 @@ The goal of this project was to create an application to easily interact and man
 
 ## Video Walkthrough 
 
-Video Walkthrough: https://drive.google.com/file/d/1D0xa5kJDUpLBurz5xoqOG_sCEzfAhFgh/view
+Video Walkthrough: https://drive.google.com/file/d/1C6sVXVaRN7KFMFq1Rty_goWepXRE-MQ7/view

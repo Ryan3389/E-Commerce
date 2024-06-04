@@ -4,28 +4,29 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
+  //find all categories and send 200 status with response
   try {
     const categoryData = await Category.findAll({
       include: [{ model: Product }]
     })
     res.status(200).json(categoryData)
   } catch (error) {
+    //catch errors
     console.error(error)
     res.status(500).json({ message: 'internal server error' })
   }
 });
 
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  // find one category by its `id` value, including its associated Products
+
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product }]
     })
     res.status(200).json(categoryData)
   } catch (error) {
+    //catch any errors
     console.error(error)
     res.status(500).json({ message: 'Internal server error' })
   }
@@ -66,7 +67,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id
       }
     })
-
+    //if there the id submitted doesn't exist send status 404 
     if (!categoryData) {
       res.status(404).json({ message: 'Category not found' })
     }
